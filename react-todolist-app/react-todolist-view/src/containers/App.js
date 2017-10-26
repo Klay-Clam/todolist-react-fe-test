@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Nav from '../components/Nav';
 import ItemsList from '../components/ItemsList';
 import Footer from '../components/Footer';
-import Log from '../components/Log';
+// import Log from '../components/Log';
 
 // utils
 import {isBlank,removeSpaces} from '../utils/IsBlank';
@@ -21,11 +21,23 @@ class App extends Component {
     // state
     this.state = {
       search:'',
-
+      signin: false,
+      signup:false,
+      showFinished:false,
+      showTodayPlan:false,
     };
 
     //Bind context
+    this.handleShowFinishedItem = this.handleShowFinishedItem.bind(this);
+    this.handleShowTodayPlaned = this.handleShowTodayPlaned.bind(this);
+  }
 
+  handleShowFinishedItem(event){
+    console.log('show items which finished');
+  }
+
+  handleShowTodayPlaned(event){
+    console.log('show itemslist which today planed');
   }
 
   render() {
@@ -34,7 +46,10 @@ class App extends Component {
         <Header/>
         <Nav/>
         <ItemsList/>
-        <Footer/>
+        <Footer 
+          handleShowFinishedItem={this.handleShowFinishedItem} 
+          handleShowTodayPlaned={this.handleShowTodayPlaned}
+        />
       </section>
     );
   }

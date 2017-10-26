@@ -1,7 +1,13 @@
 import React from 'react';
 
 class Footer extends React.Component{
-
+    constructor(props){
+        super(props);
+        this.state = {
+            handleShowFinishedItem: this.props.handleShowFinishedItem,
+            handleShowTodayPlaned: this.props.handleShowTodayPlaned,
+        }
+    }
     render(){
         return (
             <footer>
