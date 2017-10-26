@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../style/App.css';
 
 import Header from '../components/Header';
 import Nav from '../components/Nav';
@@ -15,52 +15,23 @@ import {isBlank,removeSpaces} from '../utils/IsBlank';
 // store
 import {storeGet,storeSave} from '../store/Store';
 class App extends Component {
-  constructor(props) {
+  constructor(props){
     super(props);
+
+    // state
     this.state = {
-      items: storeGet() === null ? [] : storeGet(),
-    }
+      search:'',
+
+    };
+
     //Bind context
-    this.handleAdd = this.handleAdd.bind(this);
+
   }
 
-  handleAdd(item) {
-    function listItem(num, text) {
-      return {
-        id: num,
-        value: removeSpaces(text),
-        checked: false
-      }
-    }
-
-    if (!isBlank(item)) {
-      this.setState({ search: '' });
-      this.alert("Empty value for item!", true, "error");
-    } else {
-      let newId = 0;
-      let itemsList = this.state.items;
-
-      if (itemsList[itemsList.length - 1] !== undefined) {
-        newId = itemsList[itemsList.length - 1].id + 1
-      } else {
-        newId = 1;
-      }
-
-      var newItem = new listItem(newId, item);
-      itemsList.push(newItem);
-
-      this.setState({ items: itemsList });
-      this.setState(({ leftCount: this.countLeft(itemsList) }));
-      this.setState({ search: '' });
-      storeSave(this.state.items);
-      reloadCounter++;
-    }
-  }
-  
   render() {
     return (
       <section className='panel'>
-        <Header />
+        <Header/>
         <Nav/>
         <ItemsList/>
         <Footer/>

@@ -78,6 +78,11 @@ li input{
   font-size: 17px;
   cursor: pointer;
 }
+.newitem{
+  margin:0 5%; 
+  list-style: none;
+  border-bottom: 1px solid #eeeeee;
+}
 .newitem span{
   color: #666666;
   font-size: 20px;
@@ -138,3 +143,4 @@ footer .showTodayPlan{
   border-top-right-radius: 5px;
   cursor: pointer;
 }
+
