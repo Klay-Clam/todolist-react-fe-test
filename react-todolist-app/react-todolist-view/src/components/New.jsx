@@ -1,7 +1,17 @@
 import React from 'react';
 
 class New extends React.Component{
-    handleEdited(event){
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: this.props.value
+        };
+
+        // this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleTyping = this.handleTyping.bind(this);
+    }
+
+    handleTyping(event) {
         this.setState({ value: event.target.value });
     }
 
@@ -9,7 +19,7 @@ class New extends React.Component{
         return (
             <li className='newitem'>
                 <span>+</span> <input type="text" value={this.state.value}
-                    onBlur={this.handleEdited} />
+                    onChange={this.handleTyping} />
             </li>
         )
     }
