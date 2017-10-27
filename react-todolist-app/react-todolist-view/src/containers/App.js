@@ -11,7 +11,6 @@ import Footer from '../components/Footer';
 import {isBlank,removeSpaces} from '../utils/IsBlank';
 // import Filter from '../utils/Filter';
 
-
 // store
 import {storeGet,storeSave} from '../store/Store';
 class App extends Component {
@@ -21,8 +20,8 @@ class App extends Component {
     // state
     this.state = {
       search:'',
-      signin: false,
-      signup:false,
+      isSignIn: true,
+      isSignUp:false,
       showFinished:false,
       showTodayPlan:false,
       undone: 0,
@@ -44,7 +43,7 @@ class App extends Component {
   render() {
     return (
       <section className='panel'>
-        <Header/>
+        <Header isSignIn={this.state.isSignIn} username='admin'/>
         <Nav undone={this.state.undone}/>
         <ItemsList />
         <Footer 
