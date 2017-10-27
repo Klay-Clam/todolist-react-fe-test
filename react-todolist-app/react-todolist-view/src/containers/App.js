@@ -20,7 +20,7 @@ class App extends Component {
     // state
     this.state = {
       search:'',
-      isSignIn: true,
+      isSignIn: false,
       isSignUp:false,
       showFinished:false,
       showTodayPlan:false,
@@ -45,7 +45,7 @@ class App extends Component {
       <section className='panel'>
         <Header isSignIn={this.state.isSignIn} username='admin'/>
         <Nav undone={this.state.undone}/>
-        <ItemsList />
+        <ItemsList isSignIn={this.state.isSignIn}/>
         <Footer 
           handleShowFinishedItem={this.handleShowFinishedItem} 
           handleShowTodayPlaned={this.handleShowTodayPlaned}

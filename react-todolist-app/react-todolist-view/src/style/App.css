@@ -16,9 +16,14 @@ header{
   line-height: 50px;
   background-color: #2A2A2A;
 }
+.avatar-container span{
+  color: #ffffff;
+}
 .avatar-container a{
   cursor: pointer;
   color: #ffffff;
+  font-weight:bold;
+  text-decoration: none; 
 }
 header input{
   margin-right:30px;
@@ -45,6 +50,18 @@ header button {
 }
 ul{
   margin: 0; 
+}
+ul .emptyTip{
+  display: inline-block;
+  border: 1px solid #db7d7d;
+  border-radius: 5px;
+  background-color: #db7d7d;
+  color: #ffffff;
+  font-weight: bold;
+  width: 90%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
 }
 ul li{
   list-style: none;
@@ -82,9 +99,10 @@ li input{
   list-style: none;
   border-bottom: 1px solid #eeeeee;
 }
-.newitem span{
-  color: #666666;
+.newitem label{
+  color: #ffffff;
   font-size: 20px;
+  font-weight: bold;
 }
 .newitem input{
   height: 27px;

@@ -13,6 +13,7 @@ class ItemsList extends React.Component{
     constructor(props){
         super(props);
         this.state = {
+            isSignIn:this.props.isSignIn,
             items: [1,2],
             text:'',
             undone: this.props.undone,
@@ -22,36 +23,35 @@ class ItemsList extends React.Component{
         // this.handleAdd = this.handleAdd.bind(this);
     }
 
-    // componentDidMount(){
-    //     var data = {
+    componentDidMount(){
+        var data = {
 
-    //     };
-    //     $.ajax({
-    //         url:'',
-    //         type: 'GET',
-    //         dataType: 'JSON',
-    //         data: data,
-    //         success: function(data){
-    //             console.log(data);
-    //             this.setState(
-    //                 {
-    //                     items:[],
-    //                     text:''
-    //                 }
-    //             );
-    //         },
-    //         error: function(err){
-    //             console.log(err);
-    //         }
-    //     })
-    // }
+        };
+        $.ajax({
+            url:'127.0.0.1:4000/',
+            type: 'GET',
+            data: data,
+            success: function(data){
+                console.log(data);
+                // this.setState(
+                //     {
+                //         items:[],
+                //         text:''
+                //     }
+                // );
+            },
+            error: function(err){
+                console.log(err);
+            }
+        })
+    }
 
     render(){
         return (
             <div className='ItemsList'>
                 <ul>
                     {/* 首先判断itemsList是否为空，为空则显示提示语句 */}
-                    {this.state.items.length == 0 ? <EmptyTip/> : <div><Item/><Item/></div>}
+                    {this.state.items.length == 0 || this.state.isSignIn == false ? <EmptyTip/> : <div><Item/><Item/></div>}
                     <New nextId={this.state.items.length + 1}
                     />
                 </ul> 
