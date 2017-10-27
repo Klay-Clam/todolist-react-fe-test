@@ -27,29 +27,22 @@ class ItemsList extends React.Component{
         var data = {
             username:'admin'
         };
+        var url = 'http://127.0.0.1:4000/getAllItems';
         $.ajax({
-            url:'http://127.0.0.1:4000/getAllItems',
-            type: 'GET',
-            data: data,
-            dataType:'jsonp',
-            jsonpCallback:'callback',
-            success: function(data){
-                console.log(data);
-                // this.setState(
-                //     {
-                //         items:[],
-                //         text:''
-                //     }
-                // );
-            },
-            error: function(err){
+            url: url,
+            processData: false,
+            cache: false,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(data),
+            datatype: "JSON",
+            type: 'POST',
+            success: function (res) {
+                console.log(res)
+            }, 
+            error: function (err) {
                 console.log(err);
             }
-        })
-
-        function callback(data){
-            console.log(data);
-        }
+    })
         console.log('did mount');
     }
 
