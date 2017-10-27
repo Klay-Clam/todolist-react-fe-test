@@ -6,7 +6,7 @@ class Item extends React.Component{
         return (
             <li className='item'>
                 <input type="checkbox"/>
-                <input className='editItem' readOnly value='items' type="text"/>
+                <input className='editItem' readOnly value='' type="text"/>
                 <button className='editPlus'>!</button>
             </li>
         )

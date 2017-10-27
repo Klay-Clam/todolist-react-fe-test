@@ -14,7 +14,7 @@ class ItemsList extends React.Component{
         super(props);
         this.state = {
             isSignIn:this.props.isSignIn,
-            items: [1,2],
+            items: [],
             text:'',
             undone: this.props.undone,
         }
@@ -25,12 +25,14 @@ class ItemsList extends React.Component{
 
     componentDidMount(){
         var data = {
-
+            username:'admin'
         };
         $.ajax({
-            url:'127.0.0.1:4000/',
+            url:'http://127.0.0.1:4000/getAllItems',
             type: 'GET',
             data: data,
+            dataType:'jsonp',
+            jsonpCallback:'callback',
             success: function(data){
                 console.log(data);
                 // this.setState(
@@ -44,6 +46,11 @@ class ItemsList extends React.Component{
                 console.log(err);
             }
         })
+
+        function callback(data){
+            console.log(data);
+        }
+        console.log('did mount');
     }
 
     render(){
