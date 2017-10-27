@@ -25,6 +25,7 @@ class App extends Component {
       signup:false,
       showFinished:false,
       showTodayPlan:false,
+      undone: 0,
     };
 
     //Bind context
@@ -44,8 +45,8 @@ class App extends Component {
     return (
       <section className='panel'>
         <Header/>
-        <Nav/>
-        <ItemsList/>
+        <Nav undone={this.state.undone}/>
+        <ItemsList />
         <Footer 
           handleShowFinishedItem={this.handleShowFinishedItem} 
           handleShowTodayPlaned={this.handleShowTodayPlaned}

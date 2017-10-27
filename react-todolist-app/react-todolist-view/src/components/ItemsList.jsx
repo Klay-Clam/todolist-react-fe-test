@@ -7,17 +7,43 @@ import Log from './Log';
 
 // utils 
 import {storeGet,storeSave} from '../store/Store';
+import $ from 'jquery';
 
 class ItemsList extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             items: [1,2],
-            text:''
+            text:'',
+            undone: this.props.undone,
         }
 
         // bind Context
         // this.handleAdd = this.handleAdd.bind(this);
+    }
+
+    componentDidMount(){
+        var data = {
+
+        };
+        $.ajax({
+            url:'',
+            type: 'GET',
+            dataType: 'JSON',
+            data: data,
+            success: function(data){
+                console.log(data);
+                this.setState(
+                    {
+                        items:[],
+                        text:''
+                    }
+                );
+            },
+            error: function(err){
+                console.log(err);
+            }
+        })
     }
 
     render(){
