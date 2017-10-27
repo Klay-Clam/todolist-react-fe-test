@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema();
+var mongoose = require('../models/db');
+var Schema = mongoose.Schema;
 
 var todolistSchema = new Schema({
     context: String,
@@ -13,3 +13,5 @@ var todolistSchema = new Schema({
     completed: Boolean,
     importance: Boolean
 })
+
+module.exports = mongoose.model('todolist',todolistSchema);

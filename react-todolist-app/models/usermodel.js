@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema();
+var mongoose = require('../models/db');
+var Schema = mongoose.Schema;
 
 var usersSchema = new Schema({
     username:{
@@ -9,3 +9,5 @@ var usersSchema = new Schema({
     password:String,
     lastsignintime:Date
 })
+
+module.exports = mongoose.model('users',usersSchema);
