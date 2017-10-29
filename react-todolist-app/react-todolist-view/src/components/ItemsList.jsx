@@ -27,23 +27,29 @@ class ItemsList extends React.Component{
         var data = {
             username:'admin'
         };
+        var dataFromServer ;
         var url = 'http://127.0.0.1:4000/getAllItems';
         $.ajax({
             url: url,
             processData: false,
+            async: false,
             cache: false,
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(data),
             datatype: "JSON",
             type: 'POST',
             success: function (res) {
-                console.log(res)
-            }, 
+                console.log(res);
+                // this.setState({ items: [res[0], res[1]] });
+                dataFromServer = res;
+            },
             error: function (err) {
                 console.log(err);
             }
-    })
-        console.log('did mount');
+        })
+        console.log(dataFromServer);
+        this.setState({items:dataFromServer});
+        console.log(this.state.items);
     }
 
     render(){
