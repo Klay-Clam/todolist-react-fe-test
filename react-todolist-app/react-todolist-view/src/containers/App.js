@@ -19,9 +19,7 @@ class App extends Component {
 
     // state
     this.state = {
-      search:'',
-      isSignIn: false,
-      isSignUp:false,
+      username: 'visitor',
       showFinished:false,
       showTodayPlan:false,
       undone: 0,
@@ -30,6 +28,10 @@ class App extends Component {
     //Bind context
     this.handleShowFinishedItem = this.handleShowFinishedItem.bind(this);
     this.handleShowTodayPlaned = this.handleShowTodayPlaned.bind(this);
+  }
+
+  handleGetUsername(){
+
   }
 
   handleShowFinishedItem(event){
@@ -43,9 +45,9 @@ class App extends Component {
   render() {
     return (
       <section className='panel'>
-        <Header isSignIn={this.state.isSignIn} username='admin'/>
+        <Header username={this.state.username}/>
         <Nav undone={this.state.undone}/>
-        <ItemsList isSignIn={this.state.isSignIn}/>
+        <ItemsList username={this.state.username}/>
         <Footer 
           handleShowFinishedItem={this.handleShowFinishedItem} 
           handleShowTodayPlaned={this.handleShowTodayPlaned}

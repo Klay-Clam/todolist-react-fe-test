@@ -1,11 +1,15 @@
 import React from 'react';
 
+// utils 
+import {isBlank,removeSpaces} from '../utils/IsBlank';
 class New extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
+            username:this.props.username,
+            nextId: this.props.nextId,
             item : {
-                id: this.props.nextId,
+                id: '',
                 text: '',
             } 
         };
@@ -16,13 +20,18 @@ class New extends React.Component{
     }
 
     handleTyping(event) {
-        this.setState({item:{text:event.target.value}});
+        this.setState({
+            username: this.props.username,
+            item:{
+                text: event.target.value,
+                id: `${this.state.username}-${this.state.nextId}`,
+            },
+        });
     }
     handlePushItemsList(event){
-        // alert(event.target.value);
-        // 这里应该是在input失去焦点之后，将创建的内容的value赋值给新建的Item
-        console.log(event.target.value+ ",id:" + event.target.id);
-        this.state.item.text = event.target.value;
+        console.log(this.state.item);  
+        nextId : this.state.nextId + 1,
+        console.log(this.state.nextId);
     }
 
     render(){

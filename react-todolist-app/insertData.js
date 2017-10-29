@@ -21,6 +21,20 @@ var todolist_2 = new todolistmodel({
     deadline: new Date() 
 });
 
+var visitorTodolist = new todolistmodel({
+    id : 'visitor-1',
+    owns: 'visitor',
+    context: '啊啊啊啊',
+    importance: true,
+    editedtime: new Date(),
+    completed: true,
+    deadline: new Date() 
+});
+
+var visitor = new usermodel({
+    username:'visitor',
+})
+
 var user = new usermodel({
     username:'admin',
     password:'admin',
@@ -28,7 +42,7 @@ var user = new usermodel({
 })
 var docs1 = [todolist_1,todolist_2];
 var docs2 = [user];
-usermodel.collection.insert(docs2,function(err,result){
+todolistmodel.collection.insert([visitorTodolist],function(err,result){
     if(err){
         console.log(err);
     }

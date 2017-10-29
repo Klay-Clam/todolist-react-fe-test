@@ -5,8 +5,8 @@ class Header extends React.Component{
         super(props);
 
         this.state = {
-            isSignIn : this.props.isSignIn,
             username: this.props.username,
+            search: '',
         }
 
         // bind context
@@ -15,10 +15,10 @@ class Header extends React.Component{
         return (
             <header>
                 <div className='avatar-container'>
-                    {this.state.isSignIn ? <span><a href='#'>{this.state.username}</a></span> : <span><a href='#'>登录</a><span>|</span><a href='#'>注册</a></span>}
+                    {this.state.username !== 'visitor' ? <span><a href='#'>{this.state.username}</a></span> : <span><a href='#'>登录</a><span>|</span><a href='#'>注册</a></span>}
                 </div>
                 
-                <input type="text" className='search' placeholder='Search items'/>
+                <input type="text" className='search' value={this.state.search} placeholder='Search items'/>
                 <button type='button'>
                     + 
                 </button>

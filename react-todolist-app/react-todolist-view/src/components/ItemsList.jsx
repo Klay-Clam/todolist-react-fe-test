@@ -13,37 +13,17 @@ class ItemsList extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            isSignIn:this.props.isSignIn,
+            username: this.props.username,
             items: [],
-            text:'',
             undone: this.props.undone,
         }
 
         // bind Context
-        // this.handleAdd = this.handleAdd.bind(this);
+        this.handleAdd = this.handleAdd.bind(this);
     }
 
-    componentDidMount(){
-        var data = {
-            username:'admin'
-        };
-        var url = 'http://127.0.0.1:4000/getAllItems';
-        $.ajax({
-            url: url,
-            processData: false,
-            cache: false,
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify(data),
-            datatype: "JSON",
-            type: 'POST',
-            success: function (res) {
-                console.log(res)
-            }, 
-            error: function (err) {
-                console.log(err);
-            }
-    })
-        console.log('did mount');
+    handleAdd(item){
+        
     }
 
     render(){
@@ -51,8 +31,10 @@ class ItemsList extends React.Component{
             <div className='ItemsList'>
                 <ul>
                     {/* 首先判断itemsList是否为空，为空则显示提示语句 */}
-                    {this.state.items.length == 0 || this.state.isSignIn == false ? <EmptyTip/> : <div><Item/><Item/></div>}
+                    { this.state.username === 'visitor' ? <EmptyTip/> : <div><Item/><Item/></div>}
                     <New nextId={this.state.items.length + 1}
+                         handleAdd={this.handleAdd}
+                         username={this.state.username}
                     />
                 </ul> 
             </div>
