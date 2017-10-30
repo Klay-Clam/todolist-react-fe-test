@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Item from './Item';
 // utils 
 import {isBlank,removeSpaces} from '../utils/IsBlank';
 class New extends React.Component{
@@ -30,7 +31,7 @@ class New extends React.Component{
     }
     handlePushItemsList(event){
         console.log(this.state.item);  
-        nextId : this.state.nextId + 1,
+        this.setState({nextId:this.state.nextId});
         console.log(this.state.nextId);
     }
 
