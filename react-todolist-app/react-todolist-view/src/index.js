@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style/index.css';
-import Routes from './Routes';
-// import TodoApp from './containers/TodoApp';
-import {hashHistory} from 'react-router';
+import TodoApp from './containers/TodoApp';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Routes history={hashHistory}/>, document.getElementById('root'));
+ReactDOM.render(<TodoApp/>, document.getElementById('root'));
 registerServiceWorker();
