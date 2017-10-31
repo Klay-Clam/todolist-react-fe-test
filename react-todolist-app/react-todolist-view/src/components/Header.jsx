@@ -27,9 +27,9 @@ class Header extends React.Component{
     render(){
         return (
             <header>
-                {/* <div className='avatar-container'>
-                    {this.state.username !== 'visitor' ? <span><a>{this.state.username}</a></span> : <span><a onClick={this.signIn}>登录</a><span>|</span><a onClick={this.signUp}>注册</a></span>}
-                </div> */}
+                <div className='avatar-container'>
+                <span><a>{this.state.username}</a></span>
+                </div> 
                 
                 <input type="text" className='search' value={this.state.search} placeholder='Search items'/>
             </header>

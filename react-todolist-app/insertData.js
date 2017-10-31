@@ -33,6 +33,7 @@ var visitorTodolist = new todolistmodel({
 
 var visitor = new usermodel({
     username:'visitor',
+    password:'visitor'
 })
 
 var user = new usermodel({
@@ -42,7 +43,7 @@ var user = new usermodel({
 })
 var docs1 = [todolist_1,todolist_2];
 var docs2 = [user];
-todolistmodel.collection.insert([visitorTodolist],function(err,result){
+usermodel.collection.insert([visitor],function(err,result){
     if(err){
         console.log(err);
     }

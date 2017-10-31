@@ -30,11 +30,11 @@ header input{
   border-radius: 5px;
   border: none;
   height: 45%;
-  width: 98%;
+  width: 75%;
   /* opacity: 0.5px; */
   position: relative;
-  top: 0px;
-  left: 1%;
+  top: -50px;
+  left: 24%;
   background-color: #393A3F; 
   text-align: center;
 }
@@ -128,9 +128,6 @@ nav div{
   float: right;
   text-align: center;
   line-height: 25px;
-}
-.ItemsList{
-  /* background-color: #ffffff; */
 }
 footer{
   position: fixed;
