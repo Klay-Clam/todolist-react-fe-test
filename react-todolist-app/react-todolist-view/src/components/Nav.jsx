@@ -4,7 +4,7 @@ class Nav extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            undone : this.props.undone
+            unfinishedQuantity : this.props.unfinishedQuantity,
         }
     }
     render(){
@@ -13,7 +13,7 @@ class Nav extends React.Component{
                 <span>提醒</span>
                 <div>
                     <span>{this.state.undone}</span><br/>
-                    <a href='#'>编辑</a>
+                    <a>编辑</a>
                 </div>
             </nav>
         )
