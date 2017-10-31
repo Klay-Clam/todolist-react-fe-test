@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactRouter from 'react-router';
+// import {Router,Route} from 'react-router';
 
 class Header extends React.Component{
     constructor(props){
@@ -27,9 +27,9 @@ class Header extends React.Component{
     render(){
         return (
             <header>
-                <div className='avatar-container'>
+                {/* <div className='avatar-container'>
                     {this.state.username !== 'visitor' ? <span><a>{this.state.username}</a></span> : <span><a onClick={this.signIn}>登录</a><span>|</span><a onClick={this.signUp}>注册</a></span>}
-                </div>
+                </div> */}
                 
                 <input type="text" className='search' value={this.state.search} placeholder='Search items'/>
             </header>

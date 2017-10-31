@@ -30,12 +30,11 @@ header input{
   border-radius: 5px;
   border: none;
   height: 45%;
-  width: 70%;
+  width: 98%;
   /* opacity: 0.5px; */
   position: relative;
-  top: -50px;
-  left: 20%;
-  right: 50%;
+  top: 0px;
+  left: 1%;
   background-color: #393A3F; 
   text-align: center;
 }
