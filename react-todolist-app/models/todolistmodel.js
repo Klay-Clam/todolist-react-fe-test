@@ -3,10 +3,7 @@ var Schema = mongoose.Schema;
 
 var todolistSchema = new Schema({
     context: String,
-    id: {
-        type:String,
-        unique:true
-    },
+    id: String,
     owns: String,
     deadline: Date,
     editedtime: Date,
