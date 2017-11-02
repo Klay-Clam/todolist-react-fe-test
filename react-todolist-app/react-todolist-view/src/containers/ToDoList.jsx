@@ -11,7 +11,7 @@ import Alert from '../components/Alert';
 import { storeGet, storeSave } from '../utils/Store';
 import { Search } from '../utils/Search';
 import { isBlank, removeSpaces } from '../utils/IsBlank';
-import LogIn from '../components/LogIn';
+// import LogIn from '../components/LogIn';
 
 //"Generate" key for Router
 let reloadCounter = 0;
@@ -243,7 +243,7 @@ class ToDoList extends Component {
           <Route path="/" component={() => routeComponent("all", this)} />
           <Route path="/active" component={() => routeComponent("active", this)} />
           <Route path="/completed" component={() => routeComponent("completed", this)} />
-          <Route path="/login" component={LogIn}/>
+          {/* <Route path="/login" component={LogIn}/> */}
         </Router>
       </section>
     )
